@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.logo {
+  height: 6vmin;
   pointer-events: none;
 }
 
@@ -35,4 +35,80 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* navbar css */
+.nav-btn {
+  margin-left: 250px;
+  
+}
+.navbr-btn{
+  margin-left: 20px;
+}
+
+.btn {
+  margin-left: 34px;
+  width: 150px;
+}
+
+.nav-link {
+	font-family: "Open Sans", sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 2px;
+	font-size: 15px;
+	color: rgba(0, 0, 0, 0.5);
+  /* margin-bottom: ; */
+	
+}
+.navbar.scrolled-nav {
+	background-color: #fff;
+	background-image: none;
+	box-shadow: 0 4px 7px 2px rgb(0 0 0 / 10%);
+	-webkit-box-shadow: 0 4px 7px 2px rgb(0 0 0 / 10%);
+	-moz-box-shadow: 0 4px 7px 2px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	width: 100%;
+}
+
+.banr1{
+  background-color: #d2dbee;
+  color: rgb(27, 26, 26);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.card-set{
+  margin-top: 50px;
+	margin-bottom: 50px;
+	background: #f5f8fb;
+    box-shadow: #191919;/* box-shadow:  2px 2px 2px 2px #f5f8fb; */
+    border-radius: 0px;
+    background: linear-gradient(145deg, #f5f8fb, #f5f8fb);
+    box-shadow:  5px 5px 14px #cccccc,
+             -5px -5px 14px #f4f4f4;
+             margin-left: -10px;
+  
+}
+.card-img{
+  height: 300px;
+}
+
+.banner{
+  height: 400px;
+}
+.card-button {
+	background: #39b54a;
+	padding: 3px 10px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	align-items: center;
+	margin-right: 41px;
+    margin-top: 11px;
+	border-color: #39b54a;
 }
