@@ -18,6 +18,16 @@ connection.once('open', ()=>{//Once the connection is open it's gonna open the b
     console.log("MongoDB database connection established successfully");
 }) 
 
+//uvindu routes
+
+const creditcardRouter=require('./routes/creditcard');
+const debitcardRouter=require('./routes/debitcard');
+
+app.use('/creditcard',creditcardRouter);
+app.use('/debitcard',debitcardRouter);
+
+
+
 app.listen(port, ()=>{
 
     console.log(`Server is running on port:${port}`);

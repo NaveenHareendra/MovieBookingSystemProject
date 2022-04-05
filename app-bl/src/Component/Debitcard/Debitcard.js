@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
 import '../Creditcard/Creditcard.css'
+import axios from "axios";
+
 
 export default function Debitcard() {
 
@@ -11,6 +13,35 @@ export default function Debitcard() {
   const [expiry, setExpiry] = useState('')
   const [cvv, setCvv] = useState('')
   const [focus, setFocus] = useState('')
+
+
+  function savedebitcard(e){
+    e.preventDefault();
+    
+
+    const newDebitcard={
+
+    number,
+    name,
+    expiry,
+    cvv
+    }
+    axios.post("http://localhost:5000/debitcard/add",newDebitcard).then(()=>{
+      alert("Card Saved");
+    }).catch((err)=>{
+      alert(err);
+    })
+    console.log(newDebitcard);
+  }
+function reset(){
+
+  setNumber("");
+  setName("");
+  setExpiry("");
+  setCvv("");
+}
+
+
   return (
     <div className='creditcard'>
       <Cards
@@ -20,7 +51,7 @@ export default function Debitcard() {
       cvv={cvv}
       focused={focus}
       />
-      <form>
+      <form onSubmit={savedebitcard}>
       <br/><br/>
         <input 
          type='tel'
@@ -54,13 +85,8 @@ export default function Debitcard() {
          onChange={e=>setCvv(e.target.value)}
          onFocus={e=>setFocus(e.target.name)}
          /><br/><br/>
-        <Button onClick={()=>
-       (setNumber(()=>" ")) 
-       (setName(()=>" "))
-       (setExpiry(()=>" "))
-       (setCvv(()=>" "))
-        }   >Clear</Button>
-       <Button>Save</Button>
+        <Button onClick={reset}  >Clear</Button>
+       <Button type="submit">Save</Button>
       </form><br/>
       <Button href="savedcards">View Saved Cards</Button>
     </div>
