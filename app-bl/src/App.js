@@ -9,6 +9,7 @@ import Home from "./Component/Home/Home";
 import Movies from "./Component/Movies/Movies";
 import Aboutus from "./Component/Aboutus/Aboutus";
 import Contactus from "./Component/Contactus/Contactus";
+import FoodandBeverages from "./Component/FoodandBeverages/FoodandBeverages";
 import logo from './assets/Images/logo.png'
 import { Navbar,NavDropdown } from "react-bootstrap";
 import MovieCards from "./Component/MovieCards/MovieCards";
@@ -32,6 +33,7 @@ function App() {
 	  <Nav.Link href="/movies">Movies</Nav.Link>
 	  <Nav.Link href="/aboutus">About</Nav.Link>
 	  <Nav.Link href="/contact">Contact us</Nav.Link>
+      <Nav.Link href="/foodandbeverages">FoodandBeverages</Nav.Link>
 	  <Button variant="primary" className="navbr-btn">Buy Tickects</Button>
 	  <Button variant="warning">Login</Button>
 
@@ -45,6 +47,7 @@ function App() {
 			 <Route  path="/movies" element={<Movies/>}/>
 			 <Route path='/aboutus' element={<Aboutus/>}/>
 			 <Route path='/contact' element={<Contactus/>}/>
+			 <Route path='/foodandbeverages' element={<FoodandBeverages/>}/>
 			 
 		  </Routes>
   
