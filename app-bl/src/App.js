@@ -23,9 +23,9 @@ function App() {
 	return (
 
 
-<div className="mainAppDiv">
+<div className="App">
     <BrowserRouter>
-        <div className="divHeader-container">
+
             <div id="navbar">
             <Navbar collapseOnSelect expand="lg" bg="white" variant="white" className='nav-bar animation'>
               <Container>
@@ -46,11 +46,11 @@ function App() {
             </Navbar.Collapse>
             </Container>
             </Navbar>
-</div>
+
 </div>	
 
 
-    <Routes className="divBody-container">
+    <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route  path="/movies" element={<Movies/>}/>
         <Route path='/aboutus' element={<Aboutus/>}/>
@@ -61,13 +61,12 @@ function App() {
 			 <Route path='/debitcard' element={<Debitcard/>}/>
 			 <Route path='/savedcards' element={<Savedcards/>}/>
     </Routes>
-<div className="divFooter-container">
 <footer >
 	<li>FOOTER</li>
 	<li>FOOTER</li>
 	<li>FOOTER</li>
 	<li>FOOTER</li>
-</footer></div>
+</footer>
 
 </BrowserRouter>
 </div>
