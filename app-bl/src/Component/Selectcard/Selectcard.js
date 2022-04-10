@@ -5,8 +5,8 @@ import { Button } from "react-bootstrap";
 export default function Selectcard() {
   return (
       
-    <><Button href= "creditcard">Credit card </Button>
+    <div><Button href= "creditcard">Credit card </Button><br/>
       <Button href="debitcard">Debit card </Button>
-    </>
+    </div>
   )
 }

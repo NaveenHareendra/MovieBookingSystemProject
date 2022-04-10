@@ -22,44 +22,7 @@ function App() {
 	
 	return (
 
-		<div className="App">
-			 <BrowserRouter>
-        <div id="navbar">
-			 <Navbar collapseOnSelect expand="lg" bg="white" variant="white" className='nav-bar animation'>
-  <Container>
-  <Navbar.Brand href="/"><img className='logo' src={logo}/></Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-     
-    </Nav>
-    <Nav>
-      <Nav.Link className="nav-link" href="/">Home</Nav.Link>
-	  <Nav.Link href="/movies">Movies</Nav.Link>
-	  <Nav.Link href="/selectcard">Payments</Nav.Link>
-	  <Nav.Link href="/aboutus">About</Nav.Link>
-	  <Nav.Link href="/contact">Contact us</Nav.Link>
-	  <Button variant="primary" className="navbr-btn">Buy Tickects</Button>
-	  <Button variant="warning">Login</Button>
 
-    </Nav>
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
-</div>	
-		  <Routes>
-			 <Route exact path="/" element={<Home/>} />
-			 <Route  path="/movies" element={<Movies/>}/>
-			 <Route path='/aboutus' element={<Aboutus/>}/>
-			 <Route path='/contact' element={<Contactus/>}/>
-			 <Route path='/selectcard' element={<Selectcard/>}/>
-			 <Route path='/creditcard' element={<Creditcard/>}/>
-			 <Route path='/debitcard' element={<Debitcard/>}/>
-			 <Route path='/savedcards' element={<Savedcards/>}/>
-		  </Routes>
-  
-		  </BrowserRouter>
-=======
 <div className="mainAppDiv">
     <BrowserRouter>
         <div className="divHeader-container">
@@ -74,6 +37,7 @@ function App() {
            <Nav>
                 <Nav.Link className="nav-link" href="/">Home</Nav.Link>
                 <Nav.Link href="/movies">Movies</Nav.Link>
+                <Nav.Link href="/selectcard">Payments</Nav.Link>
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickects</Button>
@@ -92,6 +56,10 @@ function App() {
         <Route path='/aboutus' element={<Aboutus/>}/>
         <Route path='/contact' element={<Contactus/>}/>
         <Route path='/Login' element={<Login/>}/>
+        <Route path='/selectcard' element={<Selectcard/>}/>
+			 <Route path='/creditcard' element={<Creditcard/>}/>
+			 <Route path='/debitcard' element={<Debitcard/>}/>
+			 <Route path='/savedcards' element={<Savedcards/>}/>
     </Routes>
 <div className="divFooter-container">
 <footer >
@@ -103,7 +71,7 @@ function App() {
 
 </BrowserRouter>
 </div>
-</div>
+
 	);
 }
 
