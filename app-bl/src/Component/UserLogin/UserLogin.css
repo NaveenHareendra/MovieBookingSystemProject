@@ -1,0 +1,45 @@
+
+.cardTemplate{
+
+    /* background-color: blue; */
+
+    max-width:  50rem;
+
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+
+div.mainDiv{
+    display: grid;
+    grid-template-columns: auto auto  auto;
+    margin-right: 30px;
+    margin-top: 15px;
+    grid-template-rows: 30rem;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: auto;
+  }
+
+  .formClass{
+      margin-top: 50px;
+      display: flex;
+      align-content: flex-start;
+  }
+
+  .LabelStyles{
+    display: flex;
+    align-content: flex-start;
+    margin-top:20px ;
+  }
+
+
+  .button{
+      margin-top: 5px;
+  }
+
+
