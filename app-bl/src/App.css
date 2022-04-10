@@ -2,6 +2,28 @@
   text-align: center;
 }
 
+div.mainAppDiv{
+  display: grid;
+  grid-template-rows: auto auto  auto;
+
+  /* text-align: center; */
+}
+.divHeader-container{
+  display: grid;
+  grid-row: 1;
+  background-color: #39b54a;
+}
+.divBody-container{
+  display: grid;
+  grid-row: 2;
+  background-color: #b53939;
+}
+
+.divFooter-container{
+  display: grid;
+  grid-row: 3;
+
+}
 .logo {
   height: 6vmin;
   pointer-events: none;
@@ -66,8 +88,8 @@
 	box-shadow: 0 4px 7px 2px rgb(0 0 0 / 10%);
 	-webkit-box-shadow: 0 4px 7px 2px rgb(0 0 0 / 10%);
 	-moz-box-shadow: 0 4px 7px 2px rgba(0, 0, 0, 0.1);
-	position: fixed;
-	top: 0;
+  position: fixed; 
+  top: 0;
 	z-index: 9999;
 	width: 100%;
 }
