@@ -1,0 +1,56 @@
+.cardTemplate{
+
+    /* background-color: blue; */
+
+    max-width:  50rem;
+
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+div.mainDivCard{
+  
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+}
+
+div.grid-containerMainDivCard{
+  margin-top: 50px;
+  display: block;
+  grid-column:2;
+}
+div.mainDivCardProfile{
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+
+.profileIcon{
+  height: 150px;
+  width: 100px;
+}
+
+div.grid-mainDivProfile{
+  display: block;
+  grid-column:2;
+}
+div.mainDivForm{
+    grid-column:1;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 50px;
+}
+.grid-containerOneForm {
+    display: block;
+    grid-column:1;
+    width: 500px;
+    height: 50px;
+  }
+.grid-containerTwoForm {
+    display: block;
+    grid-column:2;
+    height: auto;
+    height: 50px;
+    width: 100px;
+  }

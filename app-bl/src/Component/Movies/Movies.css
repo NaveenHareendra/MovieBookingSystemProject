@@ -1,0 +1,49 @@
+.mainDivMovie{
+    display: grid;
+    grid-template-columns: auto auto  auto  auto;
+    margin-right: 30px;
+    margin-top: 15px;
+    grid-template-rows: 30rem;
+    text-align: left;
+}
+
+.grid-containerMovie{
+    display: block;
+    grid-column:auto;
+
+  }
+  .textNowShowingMovieDetails{
+      margin-left: 10px;
+  }
+
+.ButtonLocationMain{
+    display: grid;
+    grid-template-columns: auto auto  auto;
+    height: 45px;
+    margin-top: 10px;
+}
+
+.ButtonLocation{
+    display: block;
+    grid-column:3;
+
+}
+  .nowShowingMovieCard{
+      height:300px;
+      width: 350px;
+      margin-left: 40px;
+      margin-right: 40px;
+
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 10px;
+  }
+
+  .movieLabel{
+      margin-right: 10px;
+      margin-top: 10px;
+  }
+
+  .imageMovie{
+      height: 150px;
+      width: 100px;
+    }

@@ -1,35 +1,50 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import UserLoginComponent from "./userLogin.component";
+
 import './UserLogin.css';
+export class UserLogin extends UserLoginComponent{
 
-export default function Login(){
-    return (
-        <div className="mainDiv">
-            <div className="grid-container">
-                <Card 
-                className="cardTemplate">
-                    <Card.Header><h4>Login</h4></Card.Header>
-                    <Card.Body >
-                        {/* <div className="formClass"> */}
-                        <form>
-                        <label className="LabelStyles">Email:</label><br/>
-                        <input type="text" required className="form-control"></input>
-                        <br/>
+    render(){
+        return (
+            <div className="mainDivLog">
+                <div className="grid-containerLog">
+                    <Card 
+                    className="cardTemplate">
+                        <Card.Header><h4>Login</h4></Card.Header>
+                        <Card.Body >
+                            {/* <div className="formClass"> */}
+                            <form onSubmit={this.onSubmit}>
+                            <label className="LabelStyles">Email:</label><br/>
+                            <input
+                             type="text" 
+                             required
+                              className="form-control"
+                              value={this.state.email}
+                              onChange={this.onChangeEmail}/>
 
-                        <label className="LabelStyles">Password:</label><br/>
-                        <input type="text" required className="form-control"></input>
-                        <br/>
-
-                        <div className="form-group">
-                             <input type="submit" value="Login" className="btn btn-primary" />
-                        </div>
-                        <Button variant="danger" className="button" >Register</Button>
-                        </form>
-                        {/* </div> */}
-                    </Card.Body>
-                </Card>
-                </div>
-        </div>
-
-    )
-}
+                            <br/>
+    
+                            <label className="LabelStyles">Password:</label><br/>
+                            <input
+                             type="text"
+                              required 
+                              className="form-control"
+                              value={this.state.password}
+                              onChange={this.onChangePassword}/>
+                            <br/>
+    
+                            <div className="form-group">
+                                 <input type="submit" value="Login" className="btn btn-primary" />
+                            </div>
+                            <Button href='/registration' variant="danger" className="button" >Register</Button>
+                            </form>
+                            {/* </div> */}
+                        </Card.Body>
+                    </Card>
+                    </div>
+            </div>
+    
+        )
+    }
+} 
