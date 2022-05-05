@@ -2,6 +2,11 @@
   /* text-align: center; */
 }
 
+.iconBtn {
+  min-width: 10px;
+
+}
+
 .logo {
   height: 6vmin;
   pointer-events: none;
@@ -60,7 +65,8 @@
   /* margin-bottom: ; */
 	
 }
-.navbar.scrolled-nav {
+/*Issue here below*/
+/* .navbar.scrolled-nav {
 	background-color: #fff;
 	background-image: none;
 	box-shadow: 0 4px 7px 2px rgb(0 0 0 / 10%);
@@ -70,7 +76,7 @@
 	top: 0;
 	z-index: 9999;
 	width: 100%;
-}
+} */
 
 .banr1{
   background-color: #d2dbee;

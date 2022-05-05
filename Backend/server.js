@@ -22,10 +22,13 @@ connection.once('open', ()=>{//Once the connection is open it's gonna open the b
 
 const creditcardRouter=require('./routes/creditcard');
 const debitcardRouter=require('./routes/debitcard');
+const userRouter=require('./routes/user');
+const movieRouter = require('./routes/movie');
 
 app.use('/creditcard',creditcardRouter);
 app.use('/debitcard',debitcardRouter);
-
+app.use('/user', userRouter);
+app.use('/movie', movieRouter);
 
 
 app.listen(port, ()=>{

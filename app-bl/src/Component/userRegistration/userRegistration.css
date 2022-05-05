@@ -1,0 +1,47 @@
+.error{
+    float: left;
+    color: red;
+    font-size: 10px;
+    
+}
+.cardTemplate{
+
+    /* background-color: blue; */
+
+    max-width:  50rem;
+
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+
+div.mainDiv{
+    display: grid;
+    grid-template-columns: auto auto  auto;
+    margin-right: 30px;
+    margin-top: 15px;
+    grid-template-rows: 30rem;
+    text-align: center;
+}
+
+.grid-container {
+    display: block;
+    grid-column:2;
+
+  }
+
+
+
+  .LabelStyles{
+      float: left;
+  }
+.submitButton{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.button{
+    margin-top: 5px;
+}
+
+
+

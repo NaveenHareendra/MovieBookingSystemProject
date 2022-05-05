@@ -86,7 +86,7 @@ function reset(){
        <Button onClick={reset}>Clear</Button>
        <Button type="submit">Save</Button>
       </form><br/>
-      <Button  href="savedcards">View Saved Cards</Button>
+      <Button  href="savedcreditcards">View Saved Cards</Button>
     </div>
     
   )
