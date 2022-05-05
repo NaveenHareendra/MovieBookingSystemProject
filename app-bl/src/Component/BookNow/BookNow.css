@@ -1,0 +1,67 @@
+.bookNowMainGrid{
+    display: grid;
+    grid-template-rows: 250px auto;
+}
+
+.BookNowHeader{
+    display: block;
+    grid-row: 1;
+    /* background-color: blueviolet; */
+}
+.BookBodyContent{
+    display: block;
+    grid-row: 2;
+    /* background-color: blueviolet; */
+}
+
+.BookNowHeaderCard{
+    height: 15rem;
+}
+
+.BookNowHeaderCardInside{
+    display: grid;
+    grid-template-columns: 250px auto;
+    /* background-color: aqua; */
+    grid-template-rows: 30px 150px 62px;
+}
+.icon{
+    width: 150px;
+    height: 150px;
+}
+.BookNowHeaderInsideContainerIcon{
+    display: block;
+    grid-row: 2;
+    grid-column: 1;
+    margin-left: 15px;
+}
+
+.BookNowHeaderInsideContainerText{
+    display: block;
+    grid-column: 2;
+    /* background-color: red; */
+    grid-row: 2;
+}
+
+.textStylesBookNow{
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.textStylesGenre{
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.textStylesMoreInfo{
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.InfoIcon{
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+}

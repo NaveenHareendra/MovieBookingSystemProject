@@ -26,8 +26,9 @@ router.route('/Login/:email/:password').get((req,res)=>{
                 id:results._id,
                 email:results.email,
                 name:results.name,
-                contactNo:results.contactNo
-
+                contactNo:results.contactNo,
+                password:results.password
+                
             }, 'secret123');
 
             // console.log(emailCheck);
@@ -63,6 +64,25 @@ router.route('/update/:id').post((req, res)=>{
 
 })
 
+router.route('/deleteAccount/:id').delete((req, res)=>{
+
+    user.findByIdAndDelete(req.params.id)
+    .then(()=>res.status(200).json('User Account Deleted'))
+    .catch(err=>res.status(400).json('Error: '+err));
+})
+
+router.route('/updateNewPassword/:id/:newPassword').post((req, res)=>{
+    user.findById(req.params.id)
+    .then(User=>{
+        User.password = req.params.newPassword;
+
+        User.save()
+        .then(()=>res.status(200).json('New Password has been update...'))
+        .catch(err=>res.status(400).json('Error: '+err));
+    })
+    .catch(err=>res.status(400).json("Error:"+err));
+});
+
 router.route('/add').post((req, res)=>{
 
     const name=req.body.name;
@@ -79,7 +99,7 @@ router.route('/add').post((req, res)=>{
     });
 
     newUser.save()
-    .then(()=>res.json('User Added!'))
+    .then(()=>res.status(200).json('User Added!'))
     .catch(err=>res.status(400).json('Error '+err));
 
 });

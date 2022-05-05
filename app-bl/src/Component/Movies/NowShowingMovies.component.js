@@ -5,28 +5,39 @@ import changButton from "../changeButton/changeButton";
 import userProfileComponent from "../userProfile/userProfile.component";
 import axios from "axios";
 import { movieService } from "../../Services/movieService";
+import { movieClass } from "../../models/movie.model";
+import BookNowComponent from "../BookNow/BookNow.component";
+
+
 export default class NowShowingMovieComponent extends Component{
 
-     loggedUser=new user(); 
+    loggedUser=new user(); 
      
-     buttonChange=new changButton();
+    buttonChange=new changButton();
 
-     profileComponent = new userProfileComponent();
+    profileComponent = new userProfileComponent();
 
-     mService = new movieService();
-     
-     constructor(props){
-         super(props);
-         
-         this.state={
+    mService = new movieService();
+ 
+    constructor(props){
+        super(props);
+
+        this.state={
             movieName:'',
             availability:'',
             Seats:0,
             movies:[]
          }
-         
+
 
      }
+
+    movieSelect(movieName, noOfSeats){
+        localStorage.setItem('movieName', movieName);
+        localStorage.setItem('noOfSeats', noOfSeats);
+        window.location.href='/BookNow';
+    } 
+        
 
      componentDidMount(){
          axios.get('http://localhost:5000/movie/nowShowingMovies/')
@@ -42,7 +53,7 @@ export default class NowShowingMovieComponent extends Component{
 
      }
 
-     fetchUser(localStorage){
+     fetchUser(localStorage){//Redirects from the user profile
         const userToken=localStorage.getItem('token');
 
         if(userToken){    
