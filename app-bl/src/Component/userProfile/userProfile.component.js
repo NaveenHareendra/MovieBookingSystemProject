@@ -7,6 +7,7 @@ export default class userProfileComponent extends Component{
 
     constructor(props){
         super(props);
+        
         this.onChangeUpdateUsername=this.onChangeUpdateUsername.bind(this);
         this.onChangeUpdateContactNo=this.onChangeUpdateContactNo.bind(this);
         this.onChangeUpdateEmail=this.onChangeUpdateEmail.bind(this);
@@ -28,7 +29,8 @@ export default class userProfileComponent extends Component{
                 contactNumber:loggedUser.getContactNo(),
                 disabledName:true,
                 disabledContactNo:true,
-                disabledEmail:true
+                disabledEmail:true,
+                setUsername:loggedUser.getUsername()
 
             }
 

@@ -10,10 +10,21 @@ export class UserProfile extends userProfileComponent{
     render(){
         return(
             <div className="mainDivCard">
+                <div className="grid-containerButtonBar">
+                    <Card className="cardTemplateButton">
+                        <div className="marginSetBtn">
+                            <Button className="buttonNavigate">View Tickets</Button><br/>
+                            <Button className="buttonNavigate">View Favourite Movies</Button><br/>
+                            <Button className="buttonNavigate">Purchase History</Button><br/>
+                            <Button className="buttonNavigate">Payment Methods</Button><br/>
+                            <Button href='/AdvancedProfileSettings' className="buttonNavigate">Advanced Profile Setting</Button>
+                        </div>
+                    </Card>
+                </div>
                 <div className="grid-containerMainDivCard">
             <Card className='cardTemplate'>
                 <CardHeader>
-                <h1>Hi {this.state.username}</h1>
+                <h1>Hi {this.state.setUsername}</h1>
                 </CardHeader>
                 <Card.Body>
                     <div className="mainDivCardProfile">
