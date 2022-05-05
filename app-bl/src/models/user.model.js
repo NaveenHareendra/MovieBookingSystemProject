@@ -30,4 +30,7 @@ export class user{
         
     }
 
+    getPassword(){
+        return this.password;
+    }
 }

@@ -25,7 +25,8 @@ import {UserLogin} from "./Component/UserLogin/UserLogin";
 import changButton from "./Component/changeButton/changeButton";
 import  {UserProfile}  from "./Component/userProfile/userProfile";
 import {PersonIcon} from '@primer/octicons-react';
-
+import {BookNow} from "./Component/BookNow/BookNow";
+import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -94,7 +95,8 @@ function App() {
        <Route path='/Profile'
        element={button.state.isTokenAvailable?<UserProfile/>:null}
        />
-       
+       <Route path='/BookNow' element={<BookNow/>}/>
+       <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
     </Routes>
     
 

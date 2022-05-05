@@ -27,7 +27,7 @@ export class UserLogin extends UserLoginComponent{
     
                             <label className="LabelStyles">Password:</label><br/>
                             <input
-                             type="text"
+                             type="password"
                               required 
                               className="form-control"
                               value={this.state.password}

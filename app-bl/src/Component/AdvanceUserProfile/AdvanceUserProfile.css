@@ -1,4 +1,4 @@
-.cardTemplate{
+.cardTemplateAdvance{
 
     /* background-color: blue; */
 
@@ -7,12 +7,13 @@
     height: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
+
 }
 div.mainDivCard{
   
   display: grid;
   grid-template-columns: auto auto auto;
-
+  
 }
 
 .cardTemplateButton{
@@ -39,7 +40,7 @@ div.grid-containerButtonBar{
   display: block;
   margin-top: 50px;
 }
-div.grid-containerMainDivCard{
+div.grid-containerAdvanceMainDivCard{
   margin-top: 50px;
   display: block;
   grid-column:2;
@@ -55,26 +56,56 @@ div.mainDivCardProfile{
   width: 100px;
 }
 
-div.grid-mainDivProfile{
+div.grid-mainDivCardAdvanceProfile{
   display: block;
   grid-column:2;
 }
-div.mainDivForm{
+
+div.mainDivFormAdvance{
     grid-column:1;
     display: grid;
     grid-template-columns: auto auto;
-    height: 50px;
+    /* background-color: aqua; */
 }
-.grid-containerOneForm {
+
+.updateButtonWidth{
+    width: 170px;
+    margin-right: 20px;
+}
+div.changeGoBackBtnPosition{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+div.DeleteButtonPosition{
+    display: block;
+    grid-column: 3;
+    background-color: aqua;
+    position: absolute;
+    right: 10px;
+}
+div.bodyTitlePosition{
     display: block;
     grid-column:1;
-    width: 500px;
+}
+
+div.bodyBackBtnPosition{
+    display: block;
+    grid-column:3;
+    position: absolute;
+    right: 15px;
+}
+.grid-containerOneFormAdvance {
+    display: block;
+    grid-column:1;
+    width: 175px;
     height: 50px;
+    /* background-color: red; */
   }
-.grid-containerTwoForm {
+.grid-containerTwoFormAdvance {
     display: block;
     grid-column:2;
-    height: auto;
     height: 50px;
-    width: 100px;
+    width: 350px;
+    /* background-color: blue; */
   }
