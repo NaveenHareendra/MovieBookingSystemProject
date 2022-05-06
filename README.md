@@ -7,6 +7,7 @@
 <li>npm i jsonwebtoken(Node)</li>
 <li>npm install react-bootstrap(React)</li>
 <li>npm i react-credit-card(React)</li>
+<li>npm i react-datepicker(React)</li>
 
 <h3>MERN STACK : MongoDB, ExpressJs, ReactJs, NodeJs</h3>
 
