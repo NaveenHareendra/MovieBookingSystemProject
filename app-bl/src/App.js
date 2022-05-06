@@ -24,6 +24,7 @@ import  {UserProfile}  from "./Component/userProfile/userProfile";
 import {PersonIcon} from '@primer/octicons-react';
 import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
+import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -91,6 +92,7 @@ function App() {
        />
        <Route path='/BookNow' element={<BookNow/>}/>
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
+       <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
     </Routes>
     
 
