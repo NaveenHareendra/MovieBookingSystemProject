@@ -1,21 +1,34 @@
 import { Component } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { movieClass } from "../../models/movie.model";
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import * as jose from 'jose';
 
 export default class BookNowComponent extends Component{
 
 
     constructor(props){
         super(props);    
+        this.handleChange = this.handleChange.bind(this);
+        this.onChangeNoOfSeatsSelected = this.onChangeNoOfSeatsSelected.bind(this);
+        this.bookNow = this.bookNow.bind(this);
 
         this.state={
             movieName:'',
-            noOfSeats:0
+            noOfSeats:0,
+            startDate:new Date(),
+            noOfSeatsSelected:0
         }
     }
 
+    onChangeNoOfSeatsSelected(e){
+        this.setState({
+            noOfSeatsSelected:e.target.value
+        });
+    }
+
+    handleChange(date) {
+        this.setState({
+          startDate: date
+        })
+      }
     componentDidMount(){
 
         this.setState({
@@ -43,5 +56,33 @@ export default class BookNowComponent extends Component{
         });
 
         // window.location.href='/BookNow';
+    }
+
+    
+    bookNow(e){
+        e.preventDefault();
+
+        if(parseInt(this.state.noOfSeatsSelected)<=parseInt(this.state.noOfSeats) && this.state.startDate!== null){
+            let availableFutureUpdate = this.state.noOfSeats - this.state.noOfSeatsSelected;
+            let price = 1000 * this.state.noOfSeatsSelected;
+
+            localStorage.setItem('availableFutureUpdate', availableFutureUpdate);
+            localStorage.setItem('noOfSeatsSelected', this.state.noOfSeatsSelected);
+            localStorage.setItem('bookingDate', this.state.startDate);
+            localStorage.setItem('movieName', this.state.movieName);
+            localStorage.setItem('price', price);
+
+            const userToken=localStorage.getItem('token');
+
+            var userDecoded=jose.decodeJwt(userToken);
+
+            localStorage.setItem('customerId', userDecoded.id);
+
+            window.location.href = '/PaymentBooking';
+
+        }else{
+            alert('Please do a valid booking...');
+        }
+
     }
 }
