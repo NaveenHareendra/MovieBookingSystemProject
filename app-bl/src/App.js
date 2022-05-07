@@ -18,6 +18,7 @@ import Debitcard from "./Component/Debitcard/Debitcard";
 import Savedcreditcards from "./Component/Savedcards/Savedcreditcards";
 import Updatecreditcard from "./Component/Savedcards/Updatecreditcard";
 import Saveddebitcards from "./Component/Savedcards/Saveddebitcards";
+import Admintickets from "./Component/AdminTicket/Admintickets";
 import Updatedebitcard from "./Component/Savedcards/Updatedebitcard";
 import '../src/assets/JS/Custom.js'
 import { Register } from "./Component/userRegistration/userRegistration";
@@ -27,6 +28,7 @@ import  {UserProfile}  from "./Component/userProfile/userProfile";
 import {PersonIcon} from '@primer/octicons-react';
 import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
+import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -57,6 +59,7 @@ function App() {
                     button.state.isTokenAvailable?'Snacks':null
                   }
                   </Nav.Link>  
+                  <Nav.Link href="/admintickets">Admin Tickets</Nav.Link>
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
@@ -90,6 +93,7 @@ function App() {
        <Route path='/updatecreditcard/:userid' element={<Updatecreditcard/>}/>
        <Route path='/saveddebitcards' element={<Saveddebitcards/>}/>
        <Route path='/updatedebitcard/:userid' element={<Updatedebitcard/>}/>
+       <Route path='/admintickets' element={<Admintickets/>}/>
        <Route path='/registration' element={<Register/>}/>
        <Route path='/changeButton' element={<changButtonComponent/>}/>
        <Route path='/Profile'
@@ -97,6 +101,7 @@ function App() {
        />
        <Route path='/BookNow' element={<BookNow/>}/>
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
+       <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
     </Routes>
     
 

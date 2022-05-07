@@ -1,10 +1,11 @@
 import BookNowComponent from "./BookNow.component";
-import { Card } from "react-bootstrap";
+import { Card , Button} from "react-bootstrap";
 import './BookNow.css';
 import {PersonIcon} from '@primer/octicons-react';
 import {InfoIcon } from '@primer/octicons-react';
-
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import React from "react";
 export class BookNow extends BookNowComponent{
 
 
@@ -34,15 +35,46 @@ export class BookNow extends BookNowComponent{
                          </div>
                     </Card>
                 </div>
+                <div className="bookNowMainGridInside">
                 <div className="BookBodyContent">
-                    <label>No of Seats</label>:
+                <Card className="bodyCard" border="primary">
+                    <Card.Header>
+                        <center>
+                        Book Now
+                        </center>
+                    </Card.Header>
+                    <Card.Title>
+                        {this.state.noOfSeats} seats remaining...
+                    </Card.Title>
+                    <hr/>
+                    <form onSubmit={this.bookNow}>
+                    <div className="form-group">
+                    <center>
+                    <label>No of Seats:</label><br/>
                     <input
-                             type="text" 
+                    
+                    onChange={this.onChangeNoOfSeatsSelected}
+                             type="number" 
                              required
                             />
-                            
                     <br/>
-                  
+
+                    <label>Select Date:</label>
+                    <DatePicker 
+                    selected={this.state.startDate}
+                    onChange={this.handleChange}
+                         name="startDate"
+                         dateFormat="MM/dd/yyyy"/>
+                         </center>
+                    <br/>
+                    <center>
+                 <Button  type='submit' className="buttonMargins" variant="primary">Book Now</Button>
+    
+                 </center>
+                 </div>
+                 </form>
+                </Card>
+                </div>  
                 </div>
             </div>
         )
