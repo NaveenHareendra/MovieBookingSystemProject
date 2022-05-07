@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import axios from 'axios'
 
 export default class PaymentBookingComponent extends Component{
 
@@ -12,11 +12,50 @@ export default class PaymentBookingComponent extends Component{
             movieName:'',
             bookingDate:Date,
             customerId:'',
-            availableFutureUpdate:0
+            availableFutureUpdate:0,
+            cardnumber:0,
+            cards:[]
+
         }
     }
 
+    saveticket=(e)=>{
+        e.preventDefault();
+        
+    
+        const ticket={
+       movieName:this.state.movieName,
+       price:this.state.price,
+       seatsNoBooked:this.state.seatsNoBooked,
+       bookingDate:this.state.bookingDate,
+       availableFutureUpdate:this.state.availableFutureUpdate,
+       customerId:this.state.customerId,
+       cardnumber:this.state.cardnumber
+       
+        }
+        axios.post("http://localhost:5000/ticket/add",ticket).then(()=>{
+          alert("Payment Successful");
+          console.log(ticket)
+        }).catch((err)=>{
+          alert(err);
+        })
+        
+      }
+
     componentDidMount(){
+
+        axios
+        .get('http://localhost:5000/debitcard')
+        .then(res=>{
+          console.log(res)
+          this.setState({cardnumber:res.data.number})
+          this.setState({cards:res.data})
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+
+
         this.setState({
             price:localStorage.getItem('price')
         });

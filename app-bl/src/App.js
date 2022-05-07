@@ -15,7 +15,11 @@ import MovieCards from "./Component/MovieCards/MovieCards";
 import Selectcard from "./Component/Selectcard/Selectcard";
 import Creditcard from "./Component/Creditcard/Creditcard";
 import Debitcard from "./Component/Debitcard/Debitcard";
-import Savedcards from "./Component/Savedcards/Savedcards";
+import Savedcreditcards from "./Component/Savedcards/Savedcreditcards";
+import Updatecreditcard from "./Component/Savedcards/Updatecreditcard";
+import Saveddebitcards from "./Component/Savedcards/Saveddebitcards";
+import Admintickets from "./Component/AdminTicket/Admintickets";
+import Updatedebitcard from "./Component/Savedcards/Updatedebitcard";
 import '../src/assets/JS/Custom.js'
 import { Register } from "./Component/userRegistration/userRegistration";
 import {UserLogin} from "./Component/UserLogin/UserLogin";
@@ -55,6 +59,7 @@ function App() {
                     button.state.isTokenAvailable?'Snacks':null
                   }
                   </Nav.Link>  
+                  <Nav.Link href="/admintickets">Admin Tickets</Nav.Link>
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
@@ -84,7 +89,11 @@ function App() {
        />
 			 <Route path='/creditcard' element={<Creditcard/>}/>
 			 <Route path='/debitcard' element={<Debitcard/>}/>
-			 <Route path='/savedcards' element={<Savedcards/>}/>
+			 <Route path='/savedcreditcards' element={<Savedcreditcards/>}/>
+       <Route path='/updatecreditcard/:userid' element={<Updatecreditcard/>}/>
+       <Route path='/saveddebitcards' element={<Saveddebitcards/>}/>
+       <Route path='/updatedebitcard/:userid' element={<Updatedebitcard/>}/>
+       <Route path='/admintickets' element={<Admintickets/>}/>
        <Route path='/registration' element={<Register/>}/>
        <Route path='/changeButton' element={<changButtonComponent/>}/>
        <Route path='/Profile'

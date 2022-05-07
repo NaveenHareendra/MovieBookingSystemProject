@@ -41,6 +41,7 @@ function reset(){
   return (
     
     <div className='creditcard'>
+      
       <Cards
       number={number}
       name={name}
@@ -48,7 +49,7 @@ function reset(){
       cvv={cvv}
       focused={focus}
       />
-      <form onSubmit={savecreditcard}>
+      <form onSubmit={savecreditcard} >
       <br/><br/>
         <input 
          type='tel'
@@ -85,7 +86,7 @@ function reset(){
        <Button onClick={reset}>Clear</Button>
        <Button type="submit">Save</Button>
       </form><br/>
-      <Button  href="savedcards">View Saved Cards</Button>
+      <Button  href="savedcreditcards">View Saved Cards</Button>
     </div>
     
   )

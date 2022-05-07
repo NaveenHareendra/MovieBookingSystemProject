@@ -20,6 +20,7 @@ input{
     border:2px solid #030303;
     border-radius: 15px 15px 15px 15px;
     margin-bottom: 10rem;
+    justify-content: center;
 }
 
 .savedcards{

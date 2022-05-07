@@ -48,7 +48,7 @@ export default class BookNowComponent extends Component{
     fromNowShowingMovies(movieName, seatsAvailable){
 
         this.setState({
-            moviename : movieName
+            movieName : movieName
         });
 
         this.setState({
