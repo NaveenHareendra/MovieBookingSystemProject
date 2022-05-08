@@ -10,15 +10,16 @@ import BookNow from '../BookNow/BookNow';
 
 const MovieL = props =>(
 <div className='textNowShowingMovieDetails'> 
+
    <label className='movieLabel'>Movie Name:</label>{props.movie.movieName}<br/>
-   
+
    <label className='movieLabel'>Availability:</label>{
    props.movie.Availability?
     <text>Available</text>:'Not Available' 
-  }
-  <br/>
+  }<br/>
   <label className='movieLabel'>Number of Seats Available:</label>{props.movie.seatsAvailable}<br/>
-   </div>
+  </div>
+
 )
 
 export class  NowShowingMovies extends NowShowingMovieComponent {
@@ -30,27 +31,25 @@ export class  NowShowingMovies extends NowShowingMovieComponent {
       return  <div className='grid-containerMovie'>
         
         <Card className='nowShowingMovieCard'>
-          <PersonIcon className='imageMovie'/>
-          <MovieL movie={currentMovie} key={currentMovie._id}/>
-          {/* <NavLink          className="btn btn-primary"
-         to={{pathname:'/BookNow',
-         state: {title:'from home page'} }} >    Book Test One</NavLink> */}
-          {/* <Link 
-             className="btn btn-primary"
-             to={{
-             pathname: "/BookNow",
-             state: {
-                  stateParam: true
-                }
-            }}
-          > 
-          Book Test
-         </Link> */}
- 
+          <div className='grid-card'>
 
-          <Button onClick={this.movieSelect.bind(this,currentMovie.movieName, currentMovie.seatsAvailable)} style={{ height:'40px'}} disabled={!currentMovie.Availability}>Book Now</Button>
-        </Card>
-        </div>;
+            <div className='moviePicture'>
+                <div class="container">
+                    <PersonIcon className='imageMovie'/> 
+                    <div class="overlay">
+                      
+
+                    </div>
+                 </div>
+            </div>
+
+          <div className='movieDetails'>
+            <MovieL movie={currentMovie} key={currentMovie._id}/>
+            <Button  onClick={this.movieSelect.bind(this,currentMovie.movieName, currentMovie.seatsAvailable, currentMovie._id)} style={{ height:'40px'}} disabled={!currentMovie.Availability}>Book Now</Button>
+          </div>
+          </div>
+          </Card>
+          </div>;
     })
 
   }

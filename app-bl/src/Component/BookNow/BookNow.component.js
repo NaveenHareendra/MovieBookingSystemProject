@@ -14,7 +14,8 @@ export default class BookNowComponent extends Component{
             movieName:'',
             noOfSeats:0,
             startDate:new Date(),
-            noOfSeatsSelected:0
+            noOfSeatsSelected:0,
+            isTokenAvailable:localStorage.getItem('token')
         }
     }
 

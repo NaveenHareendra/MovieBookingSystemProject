@@ -2,6 +2,7 @@ import React from "react";
 import { Card,Button } from "react-bootstrap";
 import './userRegistration.css';
 import userRegistrationComponent from "./userRegistration.component";
+import { ToastContainer } from "react-toastify";
 
 export class Register extends userRegistrationComponent{
 
@@ -9,6 +10,7 @@ export class Register extends userRegistrationComponent{
             return(
     
             <div className="mainDiv">
+            <ToastContainer/>
             <div className="grid-container">
                 <Card 
                 >
@@ -28,7 +30,7 @@ export class Register extends userRegistrationComponent{
 
                             <div className="form-group">
                                 <label className="LabelStyles">Email:</label>
-                                <input type="text"
+                                <input type="email"
                                  required
                                   className="form-control" 
                                    value={this.state.email} 

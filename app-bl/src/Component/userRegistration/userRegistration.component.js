@@ -1,4 +1,5 @@
 import  { Component } from "react";
+import { toast } from "react-toastify";
 import { userService } from "../../Services/UserServices";
 
 export default class userRegistrationComponent extends Component{
@@ -54,7 +55,7 @@ export default class userRegistrationComponent extends Component{
 
 
 
-    onSubmit(e){
+    async onSubmit(e){
         e.preventDefault();
         let Service=new userService();
         const user={
@@ -64,30 +65,39 @@ export default class userRegistrationComponent extends Component{
             email:this.state.email,
             dupPassword:this.state.dupPassword
         }
-        if(user.dupPassword===user.password && user.password.length>5){
-            Service.register(user.name, user.password, user.contactNo, user.email);//passes to the register service
-            this.setState({
-                wrongPassword:""
-                 
-            });
-
-            this.setState({
-                password:''
-            });
-            this.setState({
-                name:''
-            });
-            this.setState({
-                contactNo:''
-            });
-            this.setState({
-                email:''
-            });
-
-            this.setState({
-                dupPassword:''
-            });
-
+        if(user.dupPassword===user.password && user.password.length>7){
+            let checkStatus = await Service.register(user.name, user.password, user.contactNo, user.email);//passes to the register service
+            if(checkStatus === true){
+                this.setState({
+                    wrongPassword:""
+                     
+                });
+    
+                this.setState({
+                    password:''
+                });
+                this.setState({
+                    name:''
+                });
+                this.setState({
+                    contactNo:''
+                });
+                this.setState({
+                    email:''
+                });
+    
+                this.setState({
+                    dupPassword:''
+                });
+                toast.success('Registration Successful');    
+            }else{
+                if(checkStatus !== 'alreadyRegistered'){
+                    toast.error('Oops... Something went wrong...');
+                }
+            }
+            if(checkStatus === 'alreadyRegistered'){
+                toast.error('This account is already registered...')
+            }
         }else if(user.password.length<5){
             this.setState({
                 wrongPassword:"* Password should contain more than 5 characters. *"

@@ -26,16 +26,23 @@ export default class NowShowingMovieComponent extends Component{
             movieName:'',
             availability:'',
             Seats:0,
-            movies:[]
+            movies:[],
+            isTokenAvailable:localStorage.getItem('token')
          }
 
 
      }
 
-    movieSelect(movieName, noOfSeats){
-        localStorage.setItem('movieName', movieName);
-        localStorage.setItem('noOfSeats', noOfSeats);
-        window.location.href='/BookNow';
+    movieSelect(movieName, noOfSeats, movieId){
+        if(this.state.isTokenAvailable === null){
+            window.location.href ='/Login';
+        }else{
+            localStorage.setItem('movieName', movieName);
+            localStorage.setItem('noOfSeats', noOfSeats);
+            localStorage.setItem('movieId', movieId);
+            window.location.href='/BookNow';
+        }
+
     } 
         
 

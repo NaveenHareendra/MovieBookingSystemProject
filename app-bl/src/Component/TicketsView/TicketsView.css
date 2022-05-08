@@ -1,0 +1,70 @@
+.ticketsViewCard{
+    /* height:300px; */
+    width: 70rem;
+    /* margin-left: 40px;
+    margin-right: 40px; */
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+
+  
+}
+
+.mainTicketsView{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.insideTicketsView{
+    display: block;
+    grid-column: 2;
+}
+.header{
+    display: block;
+    grid-row: 1;
+
+}
+
+.title{
+    display: block;
+    grid-row: 2;
+    margin-left: 20px;
+}
+
+.body{
+    display: block;
+    grid-row: 3;
+
+}
+
+.movieNameTitle{
+    margin-left: 10px;
+}
+
+.bodyBreak{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.totalPriceView{
+    display: block;
+    grid-column: 1;
+    border-right: 2px solid black;
+    margin-right: 5px;
+    border-style: dashed;
+}
+.noOfSeatsDiv{
+    margin-bottom: 10px;
+}
+.ticketContentView{
+    display: block;
+    grid-column: 2;
+}
+.textSize{
+    font-size: 25px;
+}
+

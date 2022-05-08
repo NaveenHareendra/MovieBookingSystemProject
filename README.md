@@ -9,6 +9,8 @@
 <li>npm i react-credit-card(React)</li>
 <li>npm i react-datepicker(React)</li>
 <li>npm i @primer/octicons(React)</li>
+<li>npm i @material-ui/core(REACT)</li>
+<li>npm i react-toastify(REACT)</li>
 <h3>MERN STACK : MongoDB, ExpressJs, ReactJs, NodeJs</h3>
 
 
