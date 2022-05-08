@@ -107,7 +107,20 @@ export class AdvanceUserProfile extends AdvanceUserProfileComponent{
                          </form>
                          <hr/>
                          <form onSubmit={this.deleteAccount}>
-                         <Button type="submit" className="updateButtonWidth" variant="danger">Delete Account</Button>
+                         <Button type="submit" className="updateButtonWidth" variant="danger">
+                             Delete Account
+                             {
+                                 this.state.loading?
+                                 <Spinner
+                                 as="span"
+                                 animation="grow"
+                                 size="sm"
+                                 role="status"
+                                 aria-hidden="true"
+                               />
+                               :null
+                             }
+                             </Button>
                          <input required onChange={this.onChangeDeletePassword} type="password" placeholder="Please insert your password"/>
                          </form>
                                   </Card.Body>

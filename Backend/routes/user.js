@@ -7,7 +7,7 @@ router.route('/Login/:email/:password').get((req,res)=>{
     const emailCheck=req.params.email;
     const passwordCheck=req.params.password; 
 
-    user.findOne({email:emailCheck, password:passwordCheck}, function(err, results){
+    user.findOne({email:new RegExp(`^${emailCheck}$`, 'i'), password:passwordCheck}, function(err, results){
 
         if(err){
             console.log('Error!');

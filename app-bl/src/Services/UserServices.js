@@ -2,9 +2,13 @@ import axios from "axios";
 import NowShowingMovieComponent from "../Component/Movies/NowShowingMovies.component";
 import * as jose from 'jose';
 import userProfileComponent from "../Component/userProfile/userProfile.component";
-
+import { user } from "../models/user.model";
+import changButton from "../Component/changeButton/changeButton";
 export class userService{
-    
+     loggedUser=new user(); 
+     buttonChange=new changButton();
+
+
     async updateUserProfile(name, email, contactNo, id){
 
         const user={
@@ -52,6 +56,7 @@ export class userService{
         await axios.post('http://localhost:5000/user/updateNewPassword/'+userProfile.id+'/'+userProfile.password)
         .then(res=>{
             if(res.status===200){
+
                 // alert('password update sucessful !');
                 const userToken=localStorage.getItem('token');
                 var userDecoded=jose.decodeJwt(userToken);
@@ -118,7 +123,10 @@ export class userService{
             if(res.status===200){//Checks if the response is 'OK'  
                 if(res.data.user){
                     localStorage.setItem('token', res.data.user);
-                    movies.fetchUser(localStorage);
+                    const userToken=localStorage.getItem('token');
+                    const userDecoded=jose.decodeJwt(userToken);
+                    this.loggedUser.setProfile(userDecoded.name, userDecoded.contactNo, userDecoded.email );
+                    this.buttonChange.changeButtonState(this.loggedUser);
                 }
                 else{//Checks if a 404 is returned.
                     alert('Login unsuccessful, please check your credentials');
@@ -128,7 +136,8 @@ export class userService{
             }
         })
         .catch(function(error){
-            alert('Oops! Something went wrong');
+            alert('Login Failed...');
+            window.location.href='/Login';
             console.log(error);
         })
         
@@ -178,7 +187,7 @@ export class userService{
         axios.delete('http://localhost:5000/user/deleteAccount/'+user.id)
         .then(res=>{
             if(res.status ===200){
-                alert('Delete Successful');
+                // alert('Delete Successful');
                 localStorage.removeItem('token');
                 window.location.href = '/';
             }else{

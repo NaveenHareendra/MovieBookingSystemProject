@@ -1,10 +1,13 @@
 import { Component } from "react";
 import axios from 'axios'
 import { movieService } from "../../Services/movieService";
+import * as jose from 'jose';
 export default class PaymentBookingComponent extends Component{
 
     constructor(props){
         super(props);
+        const userToken=localStorage.getItem('token');
+        var userDecoded=jose.decodeJwt(userToken);
 
         this.state={
             movieId:'',
@@ -16,7 +19,8 @@ export default class PaymentBookingComponent extends Component{
             availableFutureUpdate:0,
             cardnumber:0,
             cards:[],
-            movieUpdate:false
+            movieUpdate:false,
+            customerName:userDecoded.name
 
         }
     }
@@ -32,7 +36,8 @@ export default class PaymentBookingComponent extends Component{
        bookingDate:this.state.bookingDate,
        availableFutureUpdate:this.state.availableFutureUpdate,
        customerId:this.state.customerId,
-       cardnumber:this.state.cardnumber
+       cardnumber:this.state.cardnumber,
+       customerName:this.state.customerName
        
         }
         axios.post("http://localhost:5000/ticket/add",ticket).then(()=>{

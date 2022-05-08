@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import UserLoginComponent from "./userLogin.component";
-
+import Spinner from 'react-bootstrap/Spinner';
 import './UserLogin.css';
 export class UserLogin extends UserLoginComponent{
 
@@ -35,9 +35,25 @@ export class UserLogin extends UserLoginComponent{
                             <br/>
     
                             <div className="form-group">
-                                 <input type="submit" value="Login" className="btn btn-primary" />
+                                 <Button type="submit"  className="btn btn-primary" >
+                                     Login
+                                     {
+                                      this.state.loading?
+                                        <Spinner
+                                        as="span"
+                                        animation="grow"
+                                        size="sm"
+                                        role="status"
+                                        aria-hidden="true"
+                                      />
+                                      :null
+                                    }
+                                     </Button>
                             </div>
-                            <Button href='/registration' variant="danger" className="button" >Register</Button>
+                            <Button href='/registration' variant="danger" className="button" >
+                                Register
+                                
+                                </Button>
                             </form>
                             {/* </div> */}
                         </Card.Body>

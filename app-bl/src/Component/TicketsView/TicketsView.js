@@ -59,6 +59,10 @@ export class TicketsView extends TicketsViewComponent{
 
             <div className="mainTicketsView">
                 <div className="insideTicketsView">
+                    <h4 className="headerTickets">
+                        Tickets
+                    </h4>
+                    <hr/>
                 <br/>
                 {this.state.check?
                 '' 

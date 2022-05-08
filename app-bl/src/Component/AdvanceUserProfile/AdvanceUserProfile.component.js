@@ -105,13 +105,16 @@ export default class  AdvanceUserProfileComponent extends Component{
             toast.error('Please Check the passwords you entered again');
             this.setState({
                 loading:false
-            })
+            });
         }
 
     }
 
     deleteAccount(e){//Efficiency Managed
         e.preventDefault();
+        this.setState({
+            loading:true
+        });
         const userToken=localStorage.getItem('token');
         var userDecoded=jose.decodeJwt(userToken);
         if(this.state.deletePassword === userDecoded.password){
@@ -121,7 +124,7 @@ export default class  AdvanceUserProfileComponent extends Component{
 
         }else{
             
-            alert('Please insert the correct password');
+            toast.warning('Please insert the correct password');
 
         }
     }

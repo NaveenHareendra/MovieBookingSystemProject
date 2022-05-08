@@ -43,7 +43,7 @@ export default class changButton extends Component{
         this.userLog=loggedUser;
         if(this.userLog){
             
-            alert('Login Successful');
+            // alert('Login Successful');
 
             window.location.href='/movies';
 
