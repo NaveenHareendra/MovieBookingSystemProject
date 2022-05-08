@@ -17,7 +17,7 @@ export class UserLogin extends UserLoginComponent{
                             <form onSubmit={this.onSubmit}>
                             <label className="LabelStyles">Email:</label><br/>
                             <input
-                             type="text" 
+                             type="email" 
                              required
                               className="form-control"
                               value={this.state.email}
