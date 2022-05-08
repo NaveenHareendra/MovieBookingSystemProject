@@ -1,4 +1,5 @@
 const router= require('express').Router();
+const ticket = require('../models/ticket');
 let Ticket=require('../models/ticket');
 
 router.route('/').get((req,res)=>{
@@ -29,5 +30,27 @@ router.route('/add').post((req,res)=>{
 });
 
 
+router.route('/getCustomerTicket/:customerId').get((req,res)=>{
+  const cusId = req.params.customerId;
+
+  ticket.find({customerId:cusId}, function(err, results){
+
+    if(err){
+      console.log('customerId check: '+req.params.customerId);
+      console.log('Something went wrong')
+    }
+
+    if(!results.length){
+      console.log('Results are not there sorry....');
+      console.log(results);
+      res.status(404);
+    }else{
+      console.log('customerId check: '+req.params.customerId);
+      console.log('Results are there: '+results);
+
+      res.json({status:200, ticket:results});
+    }
+  })
+});
 
 module.exports=router;

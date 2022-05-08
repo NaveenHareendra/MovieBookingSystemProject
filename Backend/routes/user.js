@@ -1,5 +1,6 @@
 const router=require('express').Router();
 const jwt=require('jsonwebtoken');
+const { send } = require('process');
 let user=require('../Models/user.model');
 
 router.route('/Login/:email/:password').get((req,res)=>{
@@ -90,18 +91,30 @@ router.route('/add').post((req, res)=>{
     const contactNo=req.body.contactNo;
     const password=req.body.password; 
 
+    user.findOne({email:new RegExp(`^${email}$`, 'i')}, function(err, results){
+        if(err){
+            console.log('Error');
+            res.send(404);
+        }
 
-    const newUser=new user({
-        name,
-        email,
-        contactNo,
-        password
-    });
-
-    newUser.save()
-    .then(()=>res.status(200).json('User Added!'))
-    .catch(err=>res.status(400).json('Error '+err));
-
+        if(!results){
+            console.log('Results are not there....');
+            const newUser=new user({
+                name,
+                email,
+                contactNo,
+                password
+            });
+        
+            newUser.save()
+            .then(()=>res.status(200).json('User Added!'))
+            .catch(err=>res.status(400).json('Error '+err));         
+        }else{
+            console.log('User is already there');
+            console.log(results);
+            res.json({status:201, bool:false});
+        }
+    })
 });
 
 

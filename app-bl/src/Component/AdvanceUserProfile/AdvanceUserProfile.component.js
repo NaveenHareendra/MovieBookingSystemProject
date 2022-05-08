@@ -2,6 +2,7 @@ import { Component } from "react"
 import * as jose from 'jose';
 import { user } from "../../models/user.model";
 import { userService } from "../../Services/UserServices";
+import { toast } from "react-toastify";
 
 export default class  AdvanceUserProfileComponent extends Component{
 
@@ -31,7 +32,8 @@ export default class  AdvanceUserProfileComponent extends Component{
                 previousPassword:'',
                 newPassword:'',
                 newPasswordCheck:'',
-                deletePassword:''
+                deletePassword:'',
+                loading:false
             }
         }
 
@@ -59,20 +61,51 @@ export default class  AdvanceUserProfileComponent extends Component{
         })
     }
 
-    changePassword(e){
+    async changePassword(e){
         e.preventDefault();
-        const userToken=localStorage.getItem('token');
+        this.setState({
+            loading:true
+        })
+
+        const changePassword={
+            status:false
+        }
+        let userToken=localStorage.getItem('token');
         var userDecoded=jose.decodeJwt(userToken);
         let uService = new userService();
         
         if(this.state.newPassword === this.state.newPasswordCheck && this.state.previousPassword === userDecoded.password){
-            if( this.state.newPassword>7){
-                alert('Password Change in progress');
-                uService.updateNewPassword(this.state.id, this.state.newPassword);
-            }else
-                alert('Please enter a valid number of characters...');
+            if( this.state.newPassword.length>7){
+                
+                toast.info('Password Changes in progress');
+
+                changePassword.status= await uService.updateNewPassword(this.state.id, this.state.newPassword);
+                
+                if(changePassword.status === true){
+                    await uService.RefreshLoginCredentials(userDecoded.email, this.state.newPassword);
+                    toast.success('Your password has been changed');
+                    this.setState({
+                        loading:false
+                    })
+                    
+                }else{
+                    toast.error('Sorry password change failed...');
+                    this.setState({
+                        loading:false
+                    })
+                }
+
+            }else{
+                toast.error('Please enter a valid number of characters...');
+                this.setState({
+                    loading:false
+                })
+            }
         }else{
-            alert('Please Check the passwords you entered again');
+            toast.error('Please Check the passwords you entered again');
+            this.setState({
+                loading:false
+            })
         }
 
     }

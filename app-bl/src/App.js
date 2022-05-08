@@ -29,6 +29,8 @@ import {PersonIcon} from '@primer/octicons-react';
 import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
 import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
+import { TicketsView } from "./Component/TicketsView/TicketsView";
+
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -59,7 +61,6 @@ function App() {
                     button.state.isTokenAvailable?'Snacks':null
                   }
                   </Nav.Link>  
-                  <Nav.Link href="/admintickets">Admin Tickets</Nav.Link>
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
@@ -102,6 +103,7 @@ function App() {
        <Route path='/BookNow' element={<BookNow/>}/>
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
        <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
+       <Route path='/viewTickets' element={<TicketsView/>}/>
     </Routes>
     
 

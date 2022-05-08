@@ -3,6 +3,8 @@ import AdvanceUserProfileComponent from "./AdvanceUserProfile.component";
 import './AdvanceUserProfile.css';
 import { Card, Button } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
+import { ToastContainer } from 'react-toastify';
+import Spinner from 'react-bootstrap/Spinner';
 export class AdvanceUserProfile extends AdvanceUserProfileComponent{
 
     render(){
@@ -10,6 +12,7 @@ export class AdvanceUserProfile extends AdvanceUserProfileComponent{
         return(
 
             <div className="mainDivCard">
+                <ToastContainer/>
                 <div className="grid-containerButtonBar">
                     <Card className="cardTemplateButton">
                         <div className="marginSetBtn">
@@ -33,9 +36,9 @@ export class AdvanceUserProfile extends AdvanceUserProfileComponent{
                                 <label>Change Password:</label>
                               </Card.Title>
                              </div>
-                             <div className="bodyBackBtnPosition">
-                             <Button href='Profile' variant="warning">Go Back</Button>
-                             </div>
+                             {/* <div className="bodyBackBtnPosition">
+                             <Button href='Profile' variant="warning">Go to Profile Home</Button>
+                             </div> */}
                          </div>
                          
                          <hr/>
@@ -87,7 +90,19 @@ export class AdvanceUserProfile extends AdvanceUserProfileComponent{
 
                          </div>
 
-                             <Button type="submit" className="updateButtonWidth" variant="primary">Change Password</Button>
+                             <Button type="submit" className="updateButtonWidth" variant="primary">
+                                 Change Password
+                                 {
+                                 this.state.loading?
+                                 <Spinner
+                                 as="span"
+                                 animation="grow"
+                                 size="sm"
+                                 role="status"
+                                 aria-hidden="true"
+                               />
+                               :null
+                      }</Button>
 
                          </form>
                          <hr/>

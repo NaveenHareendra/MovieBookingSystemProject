@@ -5,15 +5,18 @@ import CardHeader from "react-bootstrap/esm/CardHeader";
 import './userProfile.css';
 import {PencilIcon} from '@primer/octicons-react';
 import {PersonIcon} from '@primer/octicons-react';
-
+import Spinner from 'react-bootstrap/Spinner';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export class UserProfile extends userProfileComponent{
     render(){
         return(
             <div className="mainDivCard">
+                <ToastContainer />
                 <div className="grid-containerButtonBar">
                     <Card className="cardTemplateButton">
                         <div className="marginSetBtn">
-                            <Button className="buttonNavigate">View Tickets</Button><br/>
+                            <Button href='/viewTickets' className="buttonNavigate">View Tickets</Button><br/>
                             <Button className="buttonNavigate">View Favourite Movies</Button><br/>
                             <Button className="buttonNavigate">Purchase History</Button><br/>
                             <Button className="buttonNavigate">Payment Methods</Button><br/>
@@ -23,10 +26,12 @@ export class UserProfile extends userProfileComponent{
                 </div>
                 <div className="grid-containerMainDivCard">
             <Card className='cardTemplate'>
+            
                 <CardHeader>
-                <h1>Hi {this.state.setUsername}</h1>
+                <h1  ref={this.textInput}>{this.state.setUsername} </h1>
                 </CardHeader>
                 <Card.Body>
+                    
                     <div className="mainDivCardProfile">
                 <form onSubmit={this.onUpdate}>
 
@@ -45,7 +50,7 @@ export class UserProfile extends userProfileComponent{
                     </div>
                     <div className="grid-containerTwoForm">
                         <Button 
-                        onClick={this.onChangeUpdateUsername}
+                        onClick={this.onChangeUpdateUsernameState}
                         style={{width:'50px', height:'35px'}}>
                                 <PencilIcon/>
                         </Button>
@@ -65,7 +70,7 @@ export class UserProfile extends userProfileComponent{
                     </div>
                     <div className="grid-containerTwoForm">
                         <Button 
-                            onClick={this.onChangeUpdateEmail}
+                            onClick={this.onChangeUpdateEmailState}
                             style={{width:'50px', height:'35px'}}>
                              <PencilIcon/>
                             </Button>  
@@ -78,22 +83,39 @@ export class UserProfile extends userProfileComponent{
                     <div className="grid-containerOneForm">
                         <input
                         required
-                        type="text"
+                        type="number"
                         className="form-control"
                         value={this.state.contactNumber}
                         disabled={(this.state.disabledContactNo)? "disabled" : ""}
                         onChange={this.onChangeUpdateContactNo}/>
                     </div>
                     <div className="grid-containerTwoForm">
+                        
                         <Button 
-                            onClick={this.onChangeUpdateContactNo}
+                            onClick={this.onChangeUpdateContactNoState}
                             style={{width:'50px', height:'35px'}}>
                                <PencilIcon/>
                             </Button> 
                     </div>
-              </div>      
-             <input type="submit" value="Update" className="btn btn-primary" />  
-            
+              </div>
+              { 
+                  this.state.updateButtonAppearUsername || this.state.updateButtonAppearContact || this.state.updateButtonAppearEmail?
+                  <Button type="submit" value="Update" >
+                   Update
+                      {
+                          this.state.loading?
+                          <Spinner
+                          as="span"
+                          animation="grow"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                        />
+                        :null
+                      }
+                  </Button>
+                  :null
+              }      
              </form>  
              <div className="grid-mainDivProfile">
                  <PersonIcon className="profileIcon"/>
