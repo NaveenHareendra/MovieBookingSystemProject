@@ -8,6 +8,7 @@ export default class PaymentBookingComponent extends Component{
 
         this.state={
             price:0,
+            customerName:'',
             seatsNoBooked:0,
             movieName:'',
             bookingDate:Date,
@@ -29,6 +30,7 @@ export default class PaymentBookingComponent extends Component{
        seatsNoBooked:this.state.seatsNoBooked,
        bookingDate:this.state.bookingDate,
        availableFutureUpdate:this.state.availableFutureUpdate,
+       customerName:this.state.customerName,
        customerId:this.state.customerId,
        cardnumber:this.state.cardnumber
        
