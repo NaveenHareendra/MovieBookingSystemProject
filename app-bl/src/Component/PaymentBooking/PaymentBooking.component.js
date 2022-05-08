@@ -12,7 +12,6 @@ export default class PaymentBookingComponent extends Component{
         this.state={
             movieId:'',
             price:0,
-            customerName:'',
             seatsNoBooked:0,
             movieName:'',
             bookingDate:Date,
@@ -38,8 +37,7 @@ export default class PaymentBookingComponent extends Component{
        availableFutureUpdate:this.state.availableFutureUpdate,
        customerName:this.state.customerName,
        customerId:this.state.customerId,
-       cardnumber:this.state.cardnumber,
-       customerName:this.state.customerName
+       cardnumber:this.state.cardnumber
        
         }
         axios.post("http://localhost:5000/ticket/add",ticket).then(()=>{
@@ -53,7 +51,7 @@ export default class PaymentBookingComponent extends Component{
             mService.movieSeatCountUpdate(this.state.movieId, this.state.availableFutureUpdate);
           }
         }).catch((err)=>{
-          alert(err);
+          alert("Payment Unsuccessful!");
         })
 
       

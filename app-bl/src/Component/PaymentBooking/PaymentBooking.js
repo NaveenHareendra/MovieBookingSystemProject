@@ -24,7 +24,7 @@ export class PaymentBooking extends PaymentBookingComponent{
             <div className="payment">
                 <div>
             <h1>
-                Payment Booking Page!!
+                Payment Booking
             </h1>
             <select onChange={this.onChange}>
             <option  disabled selected hidden>Choose your card</option>
@@ -36,13 +36,7 @@ export class PaymentBooking extends PaymentBookingComponent{
 
                 ))}
             </select><br/>
-
-            <input 
-         name='customerName' 
-         placeholder='Enter Your Name'
-         onChange={this.onchange}
-         
-         /><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/>
          <label>Movie Name :</label>
             <h4>
                 {this.state.movieName}

@@ -11,8 +11,7 @@ const ticketSchema = new Schema({
     availableFutureUpdate:{type: String,require:true},
     customerName:{type: String,require:true},
     customerId:{type: String,require:true},
-    cardnumber:{type: String,require:true},
-    customerName:{type: String,require:true}
+    cardnumber:{type: String,require:true}
     
 });
 
