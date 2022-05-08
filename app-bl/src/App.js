@@ -30,6 +30,9 @@ import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
 import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
 import { TicketsView } from "./Component/TicketsView/TicketsView";
+import MovieList from "./Component/MovieList/MovieList";
+import MovieDetails from "./Component/MovieList/MovieDetails";
+import AddMovie from "./Component/MovieList/AddMovie";
 
 function App() {
   let button=new changButton();
@@ -104,6 +107,14 @@ function App() {
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
        <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
        <Route path='/viewTickets' element={<TicketsView/>}/>
+       <Route exact path="/" element={<Home/>} />
+			 <Route  path="/movies" element={<Movies/>}/>
+			 <Route path='/aboutus' element={<Aboutus/>}/>
+			 <Route path='/contact' element={<Contactus/>}/>
+			 <Route path='/movielist' element={<MovieList/>}/>
+			 <Route path="/adminlogin" element={<AdminLogin/>}/>
+			 <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
+			 <Route path='/addmovie' element={<AddMovie/>}/>
     </Routes>
     
 
