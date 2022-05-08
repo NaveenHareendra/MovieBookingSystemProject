@@ -108,13 +108,10 @@ function App() {
        <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
        <Route path='/viewTickets' element={<TicketsView/>}/>
        <Route exact path="/" element={<Home/>} />
-			 <Route  path="/movies" element={<Movies/>}/>
-			 <Route path='/aboutus' element={<Aboutus/>}/>
-			 <Route path='/contact' element={<Contactus/>}/>
-			 <Route path='/movielist' element={<MovieList/>}/>
-			 <Route path="/adminlogin" element={<AdminLogin/>}/>
-			 <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
-			 <Route path='/addmovie' element={<AddMovie/>}/>
+       <Route path='/movielist' element={<MovieList/>}/>
+       <Route path="/adminlogin" element={<AdminLogin/>}/>
+       <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
+       <Route path='/addmovie' element={<AddMovie/>}/>
     </Routes>
     
 
