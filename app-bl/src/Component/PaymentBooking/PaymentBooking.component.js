@@ -1,12 +1,13 @@
 import { Component } from "react";
 import axios from 'axios'
-
+import { movieService } from "../../Services/movieService";
 export default class PaymentBookingComponent extends Component{
 
     constructor(props){
         super(props);
 
         this.state={
+            movieId:'',
             price:0,
             seatsNoBooked:0,
             movieName:'',
@@ -14,14 +15,15 @@ export default class PaymentBookingComponent extends Component{
             customerId:'',
             availableFutureUpdate:0,
             cardnumber:0,
-            cards:[]
+            cards:[],
+            movieUpdate:false
 
         }
     }
 
     saveticket=(e)=>{
         e.preventDefault();
-        
+        let mService = new movieService();
     
         const ticket={
        movieName:this.state.movieName,
@@ -36,9 +38,18 @@ export default class PaymentBookingComponent extends Component{
         axios.post("http://localhost:5000/ticket/add",ticket).then(()=>{
           alert("Payment Successful");
           console.log(ticket)
+
+          this.setState({movieUpdate:true});
+
+          if(this.state.movieUpdate === true){
+
+            mService.movieSeatCountUpdate(this.state.movieId, this.state.availableFutureUpdate);
+          }
         }).catch((err)=>{
           alert(err);
         })
+
+      
         
       }
 
@@ -49,7 +60,9 @@ export default class PaymentBookingComponent extends Component{
         .then(res=>{
           console.log(res)
           this.setState({cardnumber:res.data.number})
-          this.setState({cards:res.data})
+          this.setState({cards:res.data});
+
+
         })
         .catch(err=>{
           console.log(err)
@@ -79,9 +92,18 @@ export default class PaymentBookingComponent extends Component{
         this.setState({
             customerId:localStorage.getItem('customerId')
         });
+
+        this.setState({
+            movieId :localStorage.getItem('movieId')
+        });
     }
 
     componentWillUnmount(){
+
+        this.setState({
+            movieId :localStorage.removeItem('movieId')
+        });
+
         this.setState({
             price:localStorage.removeItem('price')
         });

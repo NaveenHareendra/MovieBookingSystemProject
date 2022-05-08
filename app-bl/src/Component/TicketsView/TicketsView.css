@@ -55,6 +55,7 @@
     grid-column: 1;
     border-right: 2px solid black;
     margin-right: 5px;
+    border-style: dashed;
 }
 .noOfSeatsDiv{
     margin-bottom: 10px;

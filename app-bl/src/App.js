@@ -109,7 +109,7 @@ function App() {
        <Route path='/viewTickets' element={<TicketsView/>}/>
        <Route exact path="/" element={<Home/>} />
        <Route path='/movielist' element={<MovieList/>}/>
-       <Route path="/adminlogin" element={<AdminLogin/>}/>
+       {/* <Route path="/adminlogin" element={<AdminLogin/>}/> */}
        <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
        <Route path='/addmovie' element={<AddMovie/>}/>
     </Routes>

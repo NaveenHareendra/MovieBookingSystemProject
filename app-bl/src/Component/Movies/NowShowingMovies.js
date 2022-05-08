@@ -45,7 +45,7 @@ export class  NowShowingMovies extends NowShowingMovieComponent {
 
           <div className='movieDetails'>
             <MovieL movie={currentMovie} key={currentMovie._id}/>
-            <Button  onClick={this.movieSelect.bind(this,currentMovie.movieName, currentMovie.seatsAvailable)} style={{ height:'40px'}} disabled={!currentMovie.Availability}>Book Now</Button>
+            <Button  onClick={this.movieSelect.bind(this,currentMovie.movieName, currentMovie.seatsAvailable, currentMovie._id)} style={{ height:'40px'}} disabled={!currentMovie.Availability}>Book Now</Button>
           </div>
           </div>
           </Card>
