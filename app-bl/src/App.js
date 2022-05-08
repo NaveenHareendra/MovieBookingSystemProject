@@ -42,6 +42,7 @@ import MovieList from "./Component/MovieList/MovieList";
 import MovieDetails from "./Component/MovieList/MovieDetails";
 import AddMovie from "./Component/MovieList/AddMovie";
 
+import { ComingSoonMovies } from "./Component/ComingSoonMovies/ComingSoonMovies";
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -126,6 +127,8 @@ function App() {
        {/* <Route path="/adminlogin" element={<AdminLogin/>}/> */}
        <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
        <Route path='/addmovie' element={<AddMovie/>}/>
+
+       <Route path='/comingsoonmovies' element={<ComingSoonMovies/>} />
 
     </Routes>
     
