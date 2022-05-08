@@ -2,7 +2,7 @@ import React from "react";
 import TicketsViewComponent from "./TicketsView.component";
 import { Card } from "react-bootstrap";
 import './TicketsView.css';
-import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 const TicketL = props =>(
 

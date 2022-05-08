@@ -1,10 +1,10 @@
 .mainDivMovie{
     display: grid;
     grid-template-columns: auto auto  auto  auto;
-    margin-right: 30px;
-    margin-top: 15px;
+    margin-top: 30px;
     grid-template-rows: 30rem;
     text-align: left;
+
 }
 
 .grid-containerMovie{
@@ -29,10 +29,9 @@
 
 }
   .nowShowingMovieCard{
-      height:300px;
-      width: 350px;
-      margin-left: 40px;
-      margin-right: 40px;
+
+      margin-left: 20px;
+      margin-right: 20px;
 
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       border-radius: 10px;
@@ -44,6 +43,35 @@
   }
 
   .imageMovie{
-      height: 150px;
-      width: 100px;
+    display: block;
+      height: 200px;
+      width: 160px;
     }
+      .grid-card{
+          display: grid;
+          grid-template-columns: auto 200px;
+      }
+
+      .moviePicture{
+          display: block;
+          grid-column: 1;
+      }
+
+      
+      .movieDetails{
+        display: block;
+        grid-column: 2;
+    }
+
+    /* .container {
+        position: relative;
+        width: 50%;
+      } */
+      .container{
+        position: relative;
+      }
+      /* .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      } */
