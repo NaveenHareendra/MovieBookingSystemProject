@@ -29,6 +29,14 @@ import {PersonIcon} from '@primer/octicons-react';
 import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
 import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
+
+import Cartscreen from "./Component/FoodandBeverages/screen/Cartscreen";
+import Adminscreen from "./Component/FoodandBeverages/screen/Adminscreen";
+import Foodlist from "./Component/FoodandBeverages/screen/Foodlist";
+import AddFood from "./Component/FoodandBeverages/screen/AddFood";
+import EditFood from "./Component/FoodandBeverages/screen/EditFood";
+import FoodandBeverages from "./Component/FoodandBeverages/FoodandBeverages";
+
 import { TicketsView } from "./Component/TicketsView/TicketsView";
 import MovieList from "./Component/MovieList/MovieList";
 import MovieDetails from "./Component/MovieList/MovieDetails";
@@ -67,6 +75,7 @@ function App() {
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
+                <Nav.Link href="/foodandbeverages">FoodandBeverages</Nav.Link>
                 <Button href={button.state.path} onClick={button.onChangeText} variant="warning" value={button.state.changeButton}>{button.state.changeButton}</Button>
                 <div >
                   {
@@ -106,12 +115,20 @@ function App() {
        <Route path='/BookNow' element={<BookNow/>}/>
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
        <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
+
+       <Route  path='/foodandbeverages' exact element={<FoodandBeverages/>}/>
+			 <Route  path='/cart' exact element={<Cartscreen/>}/>
+			 <Route  path='/foodadmin' exact element={<Adminscreen/>}/>
+			 <Route path='/foodadmin/foodlist' exact element={<Foodlist/>}/>
+			 <Route path='/foodadmin/addfood' exact element={<AddFood/>}/>
+			 <Route path="/foodadmin/editfood/:foodid"  element={<EditFood/>}/>
+
        <Route path='/viewTickets' element={<TicketsView/>}/>
-       <Route exact path="/" element={<Home/>} />
        <Route path='/movielist' element={<MovieList/>}/>
        {/* <Route path="/adminlogin" element={<AdminLogin/>}/> */}
        <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
        <Route path='/addmovie' element={<AddMovie/>}/>
+
     </Routes>
     
 

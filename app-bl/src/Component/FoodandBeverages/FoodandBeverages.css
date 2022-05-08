@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+.navl-link{
+    color:black !important;
+}
+.navbar-brand{
+    color:black;
+}
+h1{
+    font-size:20px;
+}
+.flex-container{
+    display:flex !important;
+}
+.fb-btn{
+    background-color: red;
+    color:white;
+}
+.center2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.fb-btn-filter{
+    background-color:aquamarine;
+}
+.foodadminfunction{
+    padding: 10px;
+    background-color: blue;
+}
+.foodadminfunction li{
+    list-style-type: none !important;
+    display:inline !important;
+    color:white !important;
+}
+.foodadminfunction li a{
+    color:white !important;
+    padding:20px;
+}
+td,th,tr{
+    text-align: left;
+}
+
+.bgimg{
+    background: url("../../assets/Images/eat2.png");
+    opacity: 2.8;
+    background-size: cover;
+    height:auto;
+}
+.fb-btn-choose{
+    
+    position:relative;
+    text-align: center;
+    width:250px;
+    padding: 40px;
+    font-size: 35px;
+    color:#15f4ee;
+    font-family: poppins;
+    font-weight: 400;
+    border: 5px solid #15f4ee;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+}
+.fb-btn-choose:hover
+{
+    box-shadow: 0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee,0 5px 50px 0 #15f4ee;
+
+    text-shadow: 0 0 5px #15f4ee,0 0 5px #15f4ee;
+}
