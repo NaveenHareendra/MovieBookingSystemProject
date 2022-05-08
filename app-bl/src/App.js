@@ -62,20 +62,18 @@ function App() {
            <Nav>
                 <Nav.Link className="nav-link" href="/">Home</Nav.Link>
                 <Nav.Link href="/movies">Movies</Nav.Link>
+                {
+                    button.state.isTokenAvailable?<Nav.Link href="/foodandbeverages">Snacks</Nav.Link>
+                    :null
+                }
                 <Nav.Link href="/selectcard">
                   {
                     button.state.isTokenAvailable?'Payments':null
-                  }
-                  </Nav.Link>
-                  <Nav.Link href="">
-                  {
-                    button.state.isTokenAvailable?'Snacks':null
                   }
                   </Nav.Link>  
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
-                <Nav.Link href="/foodandbeverages">FoodandBeverages</Nav.Link>
                 <Button href={button.state.path} onClick={button.onChangeText} variant="warning" value={button.state.changeButton}>{button.state.changeButton}</Button>
                 <div >
                   {

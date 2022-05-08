@@ -22,7 +22,8 @@ export default class UserLoginComponent extends Component{
         
         this.state={
             email:'',
-            password:''
+            password:'',
+            loading:false
         }
    }
 
@@ -37,10 +38,17 @@ export default class UserLoginComponent extends Component{
             password:e.target.value
         });
     }
-
+    componentWillUnmount(){
+        this.setState({
+            loading:false
+        })
+    }
     
     onSubmit(e){
         e.preventDefault();
+        this.setState({
+            loading:true
+        })
         let Service=new userService();
         const user={
             password:this.state.password,

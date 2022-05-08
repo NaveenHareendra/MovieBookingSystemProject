@@ -18,7 +18,8 @@ router.route('/add').post((req,res)=>{
     bookingDate:req.body.bookingDate,
     availableFutureUpdate:req.body.availableFutureUpdate,
     customerId:req.body.customerId,
-    cardnumber:req.body.cardnumber
+    cardnumber:req.body.cardnumber,
+    customerName:req.body.customerName
   
 });
 

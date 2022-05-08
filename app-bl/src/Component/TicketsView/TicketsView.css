@@ -3,7 +3,7 @@
     width: 70rem;
     /* margin-left: 40px;
     margin-right: 40px; */
-
+    margin-bottom: 50px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
 
@@ -11,12 +11,17 @@
     grid-template-rows: auto auto auto;
 
 
-  
+    background-color:yellow;
+}
+
+.headerTickets{
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .mainTicketsView{
     display: grid;
     grid-template-columns: auto auto auto;
+    
 }
 
 .insideTicketsView{
@@ -26,13 +31,13 @@
 .header{
     display: block;
     grid-row: 1;
-
 }
 
 .title{
     display: block;
     grid-row: 2;
     margin-left: 20px;
+    
 }
 
 .body{

@@ -60,26 +60,4 @@ export default class NowShowingMovieComponent extends Component{
 
      }
 
-     fetchUser(localStorage){//Redirects from the user profile
-        const userToken=localStorage.getItem('token');
-
-        if(userToken){    
-
-            const userDecoded=jose.decodeJwt(userToken);
-            
-            if(!userDecoded){
-                localStorage.removeItem(userToken);
-                alert('Login unsuccessful');
-
-            }else{
-                // console.log(userDecoded);
-                this.loggedUser.setProfile(userDecoded.name, userDecoded.contactNo, userDecoded.email );
-
-                this.buttonChange.changeButtonState(this.loggedUser);
-
-            }
-        }
-
-    }
-
 }
