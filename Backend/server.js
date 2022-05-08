@@ -34,9 +34,13 @@ app.use('/ticket',ticketRouter);
 app.use('/user', userRouter);
 app.use('/movie', movieRouter);
 
+const foodRouter = require("./routes/foods.js");
+
+app.use("/api/foods/",foodRouter);
 
 app.listen(port, ()=>{
 
     console.log(`Server is running on port:${port}`);
 
 })
+

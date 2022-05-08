@@ -29,6 +29,12 @@ import {PersonIcon} from '@primer/octicons-react';
 import {BookNow} from "./Component/BookNow/BookNow";
 import { AdvanceUserProfile } from "./Component/AdvanceUserProfile/AdvanceUserProfile";
 import { PaymentBooking } from "./Component/PaymentBooking/PaymentBooking";
+import Cartscreen from "./Component/FoodandBeverages/screen/Cartscreen";
+import Adminscreen from "./Component/FoodandBeverages/screen/Adminscreen";
+import Foodlist from "./Component/FoodandBeverages/screen/Foodlist";
+import AddFood from "./Component/FoodandBeverages/screen/AddFood";
+import EditFood from "./Component/FoodandBeverages/screen/EditFood";
+import FoodandBeverages from "./Component/FoodandBeverages/FoodandBeverages";
 function App() {
   let button=new changButton();
 	// let value='1';
@@ -63,6 +69,7 @@ function App() {
                 <Nav.Link href="/aboutus">About</Nav.Link>
                 <Nav.Link href="/contact">Contact us</Nav.Link>
                 <Button variant="primary" className="navbr-btn">Buy Tickets</Button>
+                <Nav.Link href="/foodandbeverages">FoodandBeverages</Nav.Link>
                 <Button href={button.state.path} onClick={button.onChangeText} variant="warning" value={button.state.changeButton}>{button.state.changeButton}</Button>
                 <div >
                   {
@@ -102,6 +109,12 @@ function App() {
        <Route path='/BookNow' element={<BookNow/>}/>
        <Route path='/AdvancedProfileSettings' element={<AdvanceUserProfile/>}/>
        <Route path='/PaymentBooking' element={<PaymentBooking/>}/>
+       <Route  path='/foodandbeverages' exact element={<FoodandBeverages/>}/>
+			 <Route  path='/cart' exact element={<Cartscreen/>}/>
+			 <Route  path='/foodadmin' exact element={<Adminscreen/>}/>
+			 <Route path='/foodadmin/foodlist' exact element={<Foodlist/>}/>
+			 <Route path='/foodadmin/addfood' exact element={<AddFood/>}/>
+			 <Route path="/foodadmin/editfood/:foodid"  element={<EditFood/>}/>
     </Routes>
     
 
