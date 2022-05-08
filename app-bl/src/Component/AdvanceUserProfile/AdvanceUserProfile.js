@@ -16,7 +16,7 @@ export class AdvanceUserProfile extends AdvanceUserProfileComponent{
                 <div className="grid-containerButtonBar">
                     <Card className="cardTemplateButton">
                         <div className="marginSetBtn">
-                            <Button className="buttonNavigate">View Tickets</Button><br/>
+                            <Button href='/viewTickets' className="buttonNavigate">View Tickets</Button><br/>
                             <Button className="buttonNavigate">View Favourite Movies</Button><br/>
                             <Button className="buttonNavigate">Purchase History</Button><br/>
                             <Button className="buttonNavigate">Payment Methods</Button><br/>

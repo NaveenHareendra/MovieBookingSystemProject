@@ -33,12 +33,13 @@ export default class NowShowingMovieComponent extends Component{
 
      }
 
-    movieSelect(movieName, noOfSeats){
+    movieSelect(movieName, noOfSeats, movieId){
         if(this.state.isTokenAvailable === null){
             window.location.href ='/Login';
         }else{
             localStorage.setItem('movieName', movieName);
             localStorage.setItem('noOfSeats', noOfSeats);
+            localStorage.setItem('movieId', movieId);
             window.location.href='/BookNow';
         }
 
