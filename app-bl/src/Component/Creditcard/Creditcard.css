@@ -35,3 +35,44 @@ input{
     align-items: center;
     flex-direction: column;
 }
+
+.tickets{
+    margin: auto;
+    width: 30%;
+    height: 70%;
+    padding: 10px;
+    border:2px solid #030303;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+.payment{
+    margin: auto;
+    width: 40%;
+    height: 70%;
+    padding: 10px;
+    border:2px solid #030303;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+.pay{
+    margin: auto;
+    width: 40%;
+    height: 70%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.searchtickets{
+    margin: auto;
+    width: 30%;
+    height: 70%;
+    padding: 10px;
+    border:2px solid #030303;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 3rem;
+    top: 10px;
+    background-color: chartreuse;
+}

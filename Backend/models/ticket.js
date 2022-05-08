@@ -9,6 +9,7 @@ const ticketSchema = new Schema({
     seatsNoBooked:{type: String,require:true},
     bookingDate:{type: String,require:true},
     availableFutureUpdate:{type: String,require:true},
+    customerName:{type: String,require:true},
     customerId:{type: String,require:true},
     cardnumber:{type: String,require:true},
     customerName:{type: String,require:true}
