@@ -13,6 +13,10 @@ import logo from './assets/Images/logo.png'
 import { Navbar,NavDropdown } from "react-bootstrap";
 import MovieCards from "./Component/MovieCards/MovieCards";
 import '../src/assets/JS/Custom.js'
+import MovieList from "./Component/MovieList/MovieList";
+import MovieDetails from "./Component/MovieList/MovieDetails";
+import AddMovie from "./Component/MovieList/AddMovie";
+import AdminLogin from "./Component/AdminLogin/AdminLogin";
 
 function App() {
 	return (
@@ -45,6 +49,10 @@ function App() {
 			 <Route  path="/movies" element={<Movies/>}/>
 			 <Route path='/aboutus' element={<Aboutus/>}/>
 			 <Route path='/contact' element={<Contactus/>}/>
+			 <Route path='/movielist' element={<MovieList/>}/>
+			 <Route path="/adminlogin" element={<AdminLogin/>}/>
+			 <Route path="/post/:name/:director/:actors" element = {<MovieDetails />}/>
+			 <Route path='/addmovie' element={<AddMovie/>}/>
 			 
 		  </Routes>
   

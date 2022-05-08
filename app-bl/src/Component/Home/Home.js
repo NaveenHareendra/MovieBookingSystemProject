@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
 import Carousel_Compoents from '../Carousel/Carousel_Compoents'
-import MovieCards from '../MovieCards/MovieCards'
+import MovieCard from '../MoviCardClass/MoviCard'
 import banner from '../../assets/Images/banner2.jpeg'
 
 
@@ -15,7 +15,8 @@ export default function Home() {
        <h1><b>Now Showing</b></h1>
        </div>
        <br></br>
-       <MovieCards/>
+       <MovieCard/>
+       
        <br></br>
        <Row>
          <img className='banner' src={banner}></img>
